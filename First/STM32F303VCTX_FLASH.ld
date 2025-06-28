@@ -60,6 +60,11 @@ SECTIONS
     KEEP(*(.isr_vector)) /* Startup code */
     . = ALIGN(4);
   } >FLASH
+  
+  .my_code 0x8008000 :
+  {
+  	KEEP(*(.my_code))
+  } >FLASH
 
   /* The program code and other data into "FLASH" Rom type memory */
   .text :
