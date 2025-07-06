@@ -62,7 +62,7 @@ static void MX_USB_PCD_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-__attribute__((section(".my_code")))
+__attribute__((section(".my_code"))) //This is ok for table offsets. But for code offset it is better to use ORIGIN
 /* USER CODE END 0 */
 
 /**
@@ -108,6 +108,8 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	  HAL_GPIO_TogglePin(LD10_GPIO_Port, LD10_Pin);
+	  HAL_Delay(1000);
   }
   /* USER CODE END 3 */
 }
